@@ -7,6 +7,7 @@ var searchInput = document.querySelector('#search-input');
 var dayDisplay = document.querySelector('.day')
 
 var oneDayForecast = document.querySelector('.one-day-forecast');
+// var fiveDayForecast = document.querySelector('.five-day-forecast');
 let currentDate = new Date().toJSON().slice(0, 10);
 // console.log(currentDate);
 
@@ -52,6 +53,24 @@ function fiveDay(lat, lon) {
     .then(function(data){
         console.log('Five Day', data);
        
+        // fiveDayForecast.innerHTML = "";
+
+        // // create the element
+       
+        // var dateEl = document.createElement('currentDate')
+        // var tempEl = document.createElement('p');
+        // var windEl = document.createElement('p');
+        // var humidityEl = document.createElement('p');
+        // // populate the element
+       
+        // dateEl.textContent = currentDate
+        // tempEl.textContent = `Temp: ${'Five Day',data.main.temp} C` 
+        // humidityEl.textContent = `Humidity: ${'Five Day',data.main.humidity} %`
+        // windEl.textContent = `Wind: ${'Five Day',data.wind.speed} km/h`
+        // // append the element
+        // oneDayForecast.append(dateEl, tempEl, windEl, humidityEl);
+
+        // fiveDay(data.coord.lat, data.coord.lon)
     
     })
 }
