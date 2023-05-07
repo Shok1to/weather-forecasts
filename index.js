@@ -22,7 +22,7 @@ function getweather(cityName){
     })
     .then(function(data){
         console.log(data);
-        console.log('Temp: ', data.main.temp);
+        console.log('Temp: ', data.temp);
         // console.log('Pressure: ',data.main.pressure);
         // console.log('Icon: ',data.weather[0].icon)
 
@@ -37,7 +37,7 @@ function getweather(cityName){
         // populate the element
         h2El.textContent = cityName
         dateEl.textContent = currentDate
-        tempEl.textContent = `Temp: ${data.main.temp} ℃` 
+        tempEl.textContent = `Temp: ${data.main.temp} C` 
         humidityEl.textContent = `Humidity: ${data.main.humidity} %`
         windEl.textContent = `Wind: ${data.wind.speed} km/h`
         // append the element
@@ -50,30 +50,40 @@ function getweather(cityName){
 
 function fiveDay(lat, lon) {
     
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
         console.log('Five Day', data);
-        console.log('Temp: ', 'Five Day',data.main.temp);
+        console.log('Temp: ',data.list[0].main.temp)
+        console.log('Temp: ',data.list[9].main.temp)
        
         fiveDayForecast.innerHTML = "";
 
         // create the element
        
         var dateEl = document.createElement('currentDate')
-        var tempEl = document.createElement('p');
-        var windEl = document.createElement('p');
-        var humidityEl = document.createElement('p');
+        var tempEl1 = document.createElement('day1-temp');
+        var windEl1 = document.createElement('day1-humid');
+        var humidityEl1 = document.createElement('day1-wind');
         // populate the element
        
         dateEl.textContent = currentDate
-        tempEl.textContent = `Temp: ${'Five Day',data.main.temp} C` 
-        humidityEl.textContent = `Humidity: ${'Five Day',data.main.humidity} %`
-        windEl.textContent = `Wind: ${'Five Day',data.wind.speed} km/h`
+        tempEl1.textContent = `Temp: ${'Five Day',data.list[0].main.temp} C` 
+        humidityEl1.textContent = `Humidity: ${'Five Day',data.list[0].main.humidity} %`
+        windEl1.textContent = `Wind: ${'Five Day',data.list[0].wind.speed} km/h`
+        oneDayForecast.append(dateEl, tempEl1, windEl1, humidityEl1);
+
+        var tempEl2 = document.createElement('day2-temp');
+        var humidityEl2 = document.createElement('day2-humid');
+        var windEl2 = document.createElement('day2-wind');
+
+        tempEl2.textContent = `Temp: ${'Five Day',data.list[9].main.temp} C` 
+        humidityEl2.textContent = `Humidity: ${'Five Day',data.list[9].main.humidity} %`
+        windEl2.textContent = `Wind: ${'Five Day',data.list[9].wind.speed} km/h`
         // append the element
-        oneDayForecast.append(dateEl, tempEl, windEl, humidityEl);
+        oneDayForecast.append(tempEl2, windEl2, humidityEl2);
 
          
     
