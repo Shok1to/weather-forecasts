@@ -1,13 +1,17 @@
 //API Key
-var apiKey ='ddb387d2d48c85a91cbb8f7cf6c4f50a'
+var apiKey ='2385eb75852e33fb63118cdf18e9a748'
 
 
 var searchBtn = document.querySelector('#search-button');
 var searchInput = document.querySelector('#search-input');
 var dayDisplay = document.querySelector('.day')
+var day1Display = document.querySelector('.day1')
+var day2Display = document.querySelector('.day2')
+var day3Display = document.querySelector('.day3')
+var day4Display = document.querySelector('.day4')
 
 var oneDayForecast = document.querySelector('.one-day-forecast');
-// var fiveDayForecast = document.querySelector('.five-day-forecast');
+var fiveDayForecast = document.querySelector('.five-day-forecast');
 let currentDate = new Date().toJSON().slice(0, 10);
 // console.log(currentDate);
 
@@ -18,7 +22,7 @@ function getweather(cityName){
     })
     .then(function(data){
         console.log(data);
-        // console.log('Humidity: ', data.main.humidity);
+        console.log('Temp: ', data.main.temp);
         // console.log('Pressure: ',data.main.pressure);
         // console.log('Icon: ',data.weather[0].icon)
 
@@ -33,7 +37,7 @@ function getweather(cityName){
         // populate the element
         h2El.textContent = cityName
         dateEl.textContent = currentDate
-        tempEl.textContent = `Temp: ${data.main.temp} C` 
+        tempEl.textContent = `Temp: ${data.main.temp} ℃` 
         humidityEl.textContent = `Humidity: ${data.main.humidity} %`
         windEl.textContent = `Wind: ${data.wind.speed} km/h`
         // append the element
@@ -52,25 +56,26 @@ function fiveDay(lat, lon) {
     })
     .then(function(data){
         console.log('Five Day', data);
+        console.log('Temp: ', 'Five Day',data.main.temp);
        
-        // fiveDayForecast.innerHTML = "";
+        fiveDayForecast.innerHTML = "";
 
-        // // create the element
+        // create the element
        
-        // var dateEl = document.createElement('currentDate')
-        // var tempEl = document.createElement('p');
-        // var windEl = document.createElement('p');
-        // var humidityEl = document.createElement('p');
-        // // populate the element
+        var dateEl = document.createElement('currentDate')
+        var tempEl = document.createElement('p');
+        var windEl = document.createElement('p');
+        var humidityEl = document.createElement('p');
+        // populate the element
        
-        // dateEl.textContent = currentDate
-        // tempEl.textContent = `Temp: ${'Five Day',data.main.temp} C` 
-        // humidityEl.textContent = `Humidity: ${'Five Day',data.main.humidity} %`
-        // windEl.textContent = `Wind: ${'Five Day',data.wind.speed} km/h`
-        // // append the element
-        // oneDayForecast.append(dateEl, tempEl, windEl, humidityEl);
+        dateEl.textContent = currentDate
+        tempEl.textContent = `Temp: ${'Five Day',data.main.temp} C` 
+        humidityEl.textContent = `Humidity: ${'Five Day',data.main.humidity} %`
+        windEl.textContent = `Wind: ${'Five Day',data.wind.speed} km/h`
+        // append the element
+        oneDayForecast.append(dateEl, tempEl, windEl, humidityEl);
 
-        // fiveDay(data.coord.lat, data.coord.lon)
+         
     
     })
 }
