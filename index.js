@@ -4,9 +4,11 @@ var apiKey ='ddb387d2d48c85a91cbb8f7cf6c4f50a'
 
 var searchBtn = document.querySelector('#search-button');
 var searchInput = document.querySelector('#search-input');
+var dayDisplay = document.querySelector('.day')
 
-var oneDayForecast = document.querySelector('.one-day-forecast')
-
+var oneDayForecast = document.querySelector('.one-day-forecast');
+let currentDate = new Date().toJSON().slice(0, 10);
+// console.log(currentDate);
 
 function getweather(cityName){
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`)
@@ -23,16 +25,18 @@ function getweather(cityName){
 
         // create the element
         var h2El = document.createElement('h2');
+        var dateEl = document.createElement('currentDate')
         var tempEl = document.createElement('p');
         var windEl = document.createElement('p');
         var humidityEl = document.createElement('p');
         // populate the element
         h2El.textContent = cityName
+        dateEl.textContent = currentDate
         tempEl.textContent = `Temp: ${data.main.temp} C` 
         humidityEl.textContent = `Humidity: ${data.main.humidity} %`
         windEl.textContent = `Wind: ${data.wind.speed} km/h`
         // append the element
-        oneDayForecast.append(h2El, tempEl, windEl, humidityEl);
+        oneDayForecast.append(h2El,dateEl, tempEl, windEl, humidityEl);
 
         fiveDay(data.coord.lat, data.coord.lon)
 
@@ -41,12 +45,14 @@ function getweather(cityName){
 
 function fiveDay(lat, lon) {
     
-    fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
-        console.log('Five Day', data)
+        console.log('Five Day', data);
+       
+    
     })
 }
 
