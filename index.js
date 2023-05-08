@@ -52,75 +52,83 @@ function fiveDay(lat, lon) {
     })
     .then(function(data){
         console.log('Five Day', data);
-        console.log('Temp: ',data.list[0].main.temp)
-        console.log('Temp: ',data.list[9].main.temp)
-       
+        console.log('Temp: ',data.list[7].main.temp)
+        
+        console.log(data.list[0].dt_txt.substring(0, 10))
        
 
         // create the element
         var day1Display = document.querySelector('.day1')
-        var dateEl = document.createElement('currentDate')
+        var dateEl1 = document.createElement('p')
         var tempEl1 = document.createElement('p');
         var windEl1 = document.createElement('p');
         var humidityEl1 = document.createElement('p');
         // populate the element
        
-        dateEl.textContent = currentDate
-        tempEl1.textContent = `Temp: ${'Five Day',data.list[7].main.temp} C` 
-        humidityEl1.textContent = `Humidity: ${'Five Day',data.list[7].main.humidity} %`
-        windEl1.textContent = `Wind: ${'Five Day',data.list[7].wind.speed} km/h`
-        day1Display.append(dateEl, tempEl1, windEl1, humidityEl1);
+        dateEl1.textContent = `${'Five Day',data.list[0].dt_txt.substring(0, 10)}`
+        tempEl1.textContent = `Temp: ${'Five Day',data.list[0].main.temp} C` 
+        humidityEl1.textContent = `Humidity: ${'Five Day',data.list[0].main.humidity} %`
+        windEl1.textContent = `Wind: ${'Five Day',data.list[0].wind.speed} km/h`
+        day1Display.append(dateEl1, tempEl1, windEl1, humidityEl1);
 
         
         //day2
         var day2Display = document.querySelector('.day2')
+        var dateEl2 = document.createElement('p')
         var tempEl2 = document.createElement('p');
         var humidityEl2 = document.createElement('p');
         var windEl2 = document.createElement('p');
 
-        tempEl2.textContent = `Temp: ${'Five Day',data.list[15].main.temp} C` 
-        humidityEl2.textContent = `Humidity: ${'Five Day',data.list[15].main.humidity} %`
-        windEl2.textContent = `Wind: ${'Five Day',data.list[15].wind.speed} km/h`
+        dateEl2.textContent = `${'Five Day',data.list[8].dt_txt.substring(0, 10)}`
+        tempEl2.textContent = `Temp: ${'Five Day',data.list[8].main.temp} C` 
+        humidityEl2.textContent = `Humidity: ${'Five Day',data.list[8].main.humidity} %`
+        windEl2.textContent = `Wind: ${'Five Day',data.list[8].wind.speed} km/h`
         // append the element
-        day2Display.append(dateEl, tempEl2, windEl2, humidityEl2);
+        day2Display.append(dateEl2, tempEl2, windEl2, humidityEl2);
         
 
         //day3
         var day3Display = document.querySelector('.day3')
+        var dateEl3 = document.createElement('p')
         var tempEl3 = document.createElement('p');
         var humidityEl3 = document.createElement('p');
         var windEl3 = document.createElement('p');
 
-        tempEl3.textContent = `Temp: ${'Five Day',data.list[23].main.temp} C` 
-        humidityEl3.textContent = `Humidity: ${'Five Day',data.list[23].main.humidity} %`
-        windEl3.textContent = `Wind: ${'Five Day',data.list[23].wind.speed} km/h`
+        dateEl3.textContent = `${'Five Day',data.list[16].dt_txt.substring(0, 10)}`
+        tempEl3.textContent = `Temp: ${'Five Day',data.list[16].main.temp} C` 
+        humidityEl3.textContent = `Humidity: ${'Five Day',data.list[16].main.humidity} %`
+        windEl3.textContent = `Wind: ${'Five Day',data.list[16].wind.speed} km/h`
         
-        day3Display.append(tempEl3, windEl3, humidityEl3);       
+        day3Display.append(dateEl3, tempEl3, windEl3, humidityEl3);       
        
 
         //day4
         var day4Display = document.querySelector('.day4')
+        var dateEl4 = document.createElement('p')
         var tempEl4 = document.createElement('p');
         var humidityEl4 = document.createElement('p');
         var windEl4 = document.createElement('p');
 
-        tempEl4.textContent = `Temp: ${'Five Day',data.list[31].main.temp} C` 
-        humidityEl4.textContent = `Humidity: ${'Five Day',data.list[31].main.humidity} %`
-        windEl4.textContent = `Wind: ${'Five Day',data.list[31].wind.speed} km/h`
+        dateEl4.textContent = `${'Five Day',data.list[24].dt_txt.substring(0, 10)}`
+        tempEl4.textContent = `Temp: ${'Five Day',data.list[24].main.temp} C` 
+        humidityEl4.textContent = `Humidity: ${'Five Day',data.list[24].main.humidity} %`
+        windEl4.textContent = `Wind: ${'Five Day',data.list[24].wind.speed} km/h`
         // append the element
-        day4Display.append(tempEl4, windEl4, humidityEl4);
+        day4Display.append(dateEl4, tempEl4, windEl4, humidityEl4);
 
         //day5
         var day5Display = document.querySelector('.day5')
+        var dateEl5 = document.createElement('p')
         var tempEl5 = document.createElement('p');
         var humidityEl5 = document.createElement('p');
         var windEl5 = document.createElement('p');
 
-        tempEl5.textContent = `Temp: ${'Five Day',data.list[39].main.temp} C` 
-        humidityEl5.textContent = `Humidity: ${'Five Day',data.list[39].main.humidity} %`
-        windEl5.textContent = `Wind: ${'Five Day',data.list[39].wind.speed} km/h`
+        dateEl5.textContent = `${'Five Day',data.list[32].dt_txt.substring(0, 10)}`
+        tempEl5.textContent = `Temp: ${'Five Day',data.list[32].main.temp} C` 
+        humidityEl5.textContent = `Humidity: ${'Five Day',data.list[32].main.humidity} %`
+        windEl5.textContent = `Wind: ${'Five Day',data.list[32].wind.speed} km/h`
         // append the element
-        day5Display.append(tempEl5, windEl5, humidityEl5);
+        day5Display.append(dateEl5, tempEl5, windEl5, humidityEl5);
 
 
 
