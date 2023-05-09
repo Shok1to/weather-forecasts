@@ -7,7 +7,10 @@ var searchInput = document.querySelector('#search-input');
 var oneDayForecast = document.querySelector('.one-day-forecast');
 var fiveDayForecast = document.querySelector('.five-day-forecast');
 let currentDate = new Date().toJSON().slice(0, 10);
-
+var forecastDisplay = document.querySelector('.forecast');
+var card = document.querySelector('.card') 
+fiveDayForecast.style.display = 'none'
+card.style.display = 'none'
 
 function getweather(cityName){
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`)
@@ -16,6 +19,8 @@ function getweather(cityName){
     })
     .then(function(data){
         console.log(data);
+        card.style.display = 'block'
+        fiveDayForecast.style.display = 'block'
         // console.log('Temp: ', data.temp);
         // console.log('Pressure: ',data.main.pressure);
         // console.log('Icon: ',data.weather[0].icon)
@@ -23,7 +28,7 @@ function getweather(cityName){
         // oneDayForecast.innerHTML = "";
 
         // create the element
-        var forecastDisplay = document.querySelector('.forecast');
+       
         var h2El = document.createElement('h2');
         var dateEl = document.createElement('currentDate')
         var tempEl = document.createElement('p');

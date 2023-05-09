@@ -21,3 +21,11 @@ header {
     left: 300px;
 }
 
+.flexbox-container{
+    display: flex;
+    justify-content: space-between;
+    /* width: 800px;
+    margin-right: 10px; */
+}
+
+
