@@ -4,3 +4,19 @@ header {
  text-align: center;
  color: white;
 }
+
+.card{
+    background-color: #084887;
+    color: white;
+    
+}
+
+.one-day-forecast{
+    position: relative;
+    left: 300px;
+}
+
+/* .five-day-forecast{
+    position: relative;
+    left: 300px;
+} */
