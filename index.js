@@ -28,9 +28,9 @@ function getweather(cityName){
         // oneDayForecast.innerHTML = "";
 
         // create the element
-       
+        
         var h2El = document.createElement('h2');
-        var dateEl = document.createElement('currentDate')
+        var dateEl = document.createElement('currentDate');
         var tempEl = document.createElement('p');
         var windEl = document.createElement('p');
         var humidityEl = document.createElement('p');
@@ -42,10 +42,15 @@ function getweather(cityName){
         humidityEl.textContent = `Humidity: ${data.main.humidity} %`
         windEl.textContent = `Wind: ${data.wind.speed} km/h`
 
+        var weatherIcon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+        var iconEl = document.createElement('img')
+        iconEl.setAttribute('scr', weatherIcon)
+       
+
         // append the element
         // oneDayForecast.append(h2El,dateEl, tempEl, windEl, humidityEl);
 
-        forecastDisplay.append(h2El,dateEl, tempEl, windEl, humidityEl);
+        forecastDisplay.append(h2El, dateEl, tempEl, windEl, humidityEl, iconEl);
         fiveDay(data.coord.lat, data.coord.lon)
 
     })
