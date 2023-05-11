@@ -202,7 +202,8 @@ function getCity () {
 
 function displayHistory (){
 
-    var storedCity = JSON.parse(localStorage.getItem('cityName'))
+    // var storedCity = JSON.parse(localStorage.getItem('cityName'))
+    var storedCity = JSON.parse(localStorage.getItem('cityName')) || [];
     storedCity.forEach(function(city) {
         // Create the button element for the city
         var buttonEl = document.createElement('button');
