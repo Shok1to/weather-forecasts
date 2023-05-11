@@ -5,27 +5,48 @@ header {
  color: white;
 }
 
+.general {
+    margin: 40px auto;
+    max-width: 95%;
+}
+#search-input{
+    max-width: 60%;
+    padding: 10px;
+    margin: 8px 0;
+}
+#search-button{
+    max-width: 60%;
+    padding: 10px;
+    margin: 8px 0;
+    background-color: #084887; 
+    color: white; 
+}
+
+#history-container {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+}
+
+#history-container button {
+    max-width: 60%;
+    padding: 10px;
+    margin: 8px 0;
+    background-color: #7d8084;
+    color: white;
+}
+
 .card{
     background-color: #084887;
     color: white;
     
 }
 
-.one-day-forecast{
-    position: relative;
-    left: 300px;
-}
-
-.five-day-forecast{
-    position: relative;
-    left: 300px;
-}
 
 .flexbox-container{
     display: flex;
     justify-content: space-between;
-    /* width: 800px;
-    margin-right: 10px; */
+    
 }
 
 
