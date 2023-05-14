@@ -32,15 +32,17 @@ function getweather(cityName){
         // create the element
         
         var h2El = document.createElement('h2');
-        var dateEl = document.createElement('p');
+        h2El.classList.add("my-class");
+        var dateEl = document.createElement('h2');
+        dateEl.classList.add("my-class");
         var tempEl = document.createElement('p');
         var windEl = document.createElement('p');
         var humidityEl = document.createElement('p');
 
         // populate the element
         h2El.textContent = cityName
-        dateEl.textContent = currentDate
-        tempEl.textContent = `Temp: ${data.main.temp} C` 
+        dateEl.textContent = `(${currentDate})`
+        tempEl.textContent = `Temp: ${data.main.temp} ℃` 
         humidityEl.textContent = `Humidity: ${data.main.humidity} %`
         windEl.textContent = `Wind: ${data.wind.speed} km/h`
 
@@ -81,7 +83,7 @@ function fiveDay(lat, lon) {
         
         // populate the element
         dateEl1.textContent = `${'Five Day',data.list[6].dt_txt.substring(0, 10)}`
-        tempEl1.textContent = `Temp: ${'Five Day',data.list[6].main.temp} C` 
+        tempEl1.textContent = `Temp: ${'Five Day',data.list[6].main.temp} ℃` 
         humidityEl1.textContent = `Humidity: ${'Five Day',data.list[6].main.humidity} %`
         windEl1.textContent = `Wind: ${'Five Day',data.list[6].wind.speed} km/h`
 
@@ -102,7 +104,7 @@ function fiveDay(lat, lon) {
         var windEl2 = document.createElement('p');
 
         dateEl2.textContent = `${'Five Day',data.list[14].dt_txt.substring(0, 10)}`
-        tempEl2.textContent = `Temp: ${'Five Day',data.list[14].main.temp} C` 
+        tempEl2.textContent = `Temp: ${'Five Day',data.list[14].main.temp} ℃` 
         humidityEl2.textContent = `Humidity: ${'Five Day',data.list[14].main.humidity} %`
         windEl2.textContent = `Wind: ${'Five Day',data.list[14].wind.speed} km/h`
         
@@ -123,7 +125,7 @@ function fiveDay(lat, lon) {
         var windEl3 = document.createElement('p');
 
         dateEl3.textContent = `${'Five Day',data.list[22].dt_txt.substring(0, 10)}`
-        tempEl3.textContent = `Temp: ${'Five Day',data.list[22].main.temp} C` 
+        tempEl3.textContent = `Temp: ${'Five Day',data.list[22].main.temp} ℃` 
         humidityEl3.textContent = `Humidity: ${'Five Day',data.list[22].main.humidity} %`
         windEl3.textContent = `Wind: ${'Five Day',data.list[22].wind.speed} km/h`
         
@@ -143,7 +145,7 @@ function fiveDay(lat, lon) {
         var windEl4 = document.createElement('p');
 
         dateEl4.textContent = `${'Five Day',data.list[30].dt_txt.substring(0, 10)}`
-        tempEl4.textContent = `Temp: ${'Five Day',data.list[30].main.temp} C` 
+        tempEl4.textContent = `Temp: ${'Five Day',data.list[30].main.temp} ℃` 
         humidityEl4.textContent = `Humidity: ${'Five Day',data.list[30].main.humidity} %`
         windEl4.textContent = `Wind: ${'Five Day',data.list[30].wind.speed} km/h`
         
@@ -162,7 +164,7 @@ function fiveDay(lat, lon) {
         var windEl5 = document.createElement('p');
 
         dateEl5.textContent = `${'Five Day',data.list[38].dt_txt.substring(0, 10)}`
-        tempEl5.textContent = `Temp: ${'Five Day',data.list[38].main.temp} C` 
+        tempEl5.textContent = `Temp: ${'Five Day',data.list[38].main.temp} ℃` 
         humidityEl5.textContent = `Humidity: ${'Five Day',data.list[38].main.humidity} %`
         windEl5.textContent = `Wind: ${'Five Day',data.list[38].wind.speed} km/h`
 
